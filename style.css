@@ -1,0 +1,124 @@
+/* ===== Pastel Green Theme ===== */
+
+:root {
+  --bg-main: #eef7f2;
+  --bg-secondary: #dbeee4;
+  --bg-sidebar: #cfe7dc;
+  --bg-hover: #b9dccc;
+  --text-main: #1e2b28;
+  --accent-dark: #1f3d33;
+  --accent-soft: #94c9b3;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  color: var(--accent-dark);
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -240px;
+  width: 240px;
+  height: 100%;
+  background-color: var(--bg-sidebar);
+  padding-top: 4rem;
+  transition: 0.3s ease;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+
+#sidebar a {
+  display: block;
+  padding: 1rem 1.8rem;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: bold;
+}
+
+#sidebar a:hover {
+  background-color: var(--bg-hover);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding: 6rem 4rem;
+  background: linear-gradient(
+    135deg,
+    var(--bg-main),
+    var(--bg-secondary)
+  );
+}
+
+/* Profile Image */
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--bg-secondary);
+  border: 8px solid var(--accent-soft);
+}
+
+/* Text */
+.hero-text h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero-text h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  max-width: 650px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: var(--accent-dark);
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1.8rem;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #163028;
+}
+
+/* Page content (inner pages) */
+h1 {
+  padding: 2.5rem 3rem 1rem;
+}
+
+ul {
+  padding: 0 3.5rem 3rem;
+  line-height: 1.8;
+}
