@@ -320,5 +320,24 @@ body > ul {
     padding: 1.3rem 1.5rem;
   }
 }
+/* ================================
+   HAMBURGER FADE EFFECT
+   ================================ */
+
+.hamburger {
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+/* Faded state */
+.hamburger.fade {
+  opacity: 0.45;
+}
+
+/* Keep visible when sidebar is open */
+#sidebar.open + .hamburger,
+.hamburger.active {
+  opacity: 1;
+}
+
 
 
