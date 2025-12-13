@@ -374,5 +374,22 @@ body > ul {
   background-repeat: no-repeat;
 }
 
+/* ===== Global Page Layout (All Pages) ===== */
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6rem 2.5rem;
+}
 
+/* Typography */
+.page-content h1,
+.page-content h2,
+.page-content h3 {
+  margin-top: 2.5rem;
+}
+
+.page-content p,
+.page-content ul {
+  line-height: 1.8;
+}
 
