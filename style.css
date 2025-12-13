@@ -180,3 +180,123 @@ body > ul {
   padding-right: 4rem;
   max-width: 900px;
 }
+
+/* =====================================================
+   INNER PAGE LAYOUT FIX (DESKTOP)
+   ===================================================== */
+
+.page-content {
+  margin-left: 5rem;          /* space from left edge / hamburger */
+  padding: 2.5rem 3rem;
+  max-width: 900px;
+}
+
+/* Improve readability of long references */
+.page-content ul li {
+  margin-bottom: 1.4rem;
+  line-height: 1.9;
+}
+
+/* Prevent long DOI links from breaking layout */
+.page-content a {
+  word-break: break-word;
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE STYLES
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Hamburger stays visible */
+  .hamburger {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+
+  /* Sidebar covers screen on mobile */
+  #sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  #sidebar.open {
+    left: 0;
+  }
+
+  #sidebar a {
+    font-size: 1.1rem;
+    padding: 1.2rem 2rem;
+  }
+
+  /* Hero section stacks vertically */
+  .hero {
+    flex-direction: column;
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-text {
+    padding: 1.8rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.05rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  /* Contact icons centered */
+  .contact-icons {
+    justify-content: center;
+  }
+
+  /* Inner pages full width on mobile */
+  .page-content {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  h2, h3, p, ul {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* =====================================================
+   VERY SMALL DEVICES (PHONES)
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .btn {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
+
