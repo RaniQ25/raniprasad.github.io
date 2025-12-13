@@ -55,18 +55,26 @@ body {
   background-color: var(--bg-hover);
 }
 
-/* Hero Section */
+/* Hero Section with Background Image */
 .hero {
   display: flex;
   align-items: center;
   gap: 3.5rem;
   padding: 6rem 4rem;
-  background: linear-gradient(
-    135deg,
-    var(--bg-main),
-    var(--bg-secondary)
-  );
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(238, 247, 242, 0.88),
+      rgba(219, 238, 228, 0.88)
+    ),
+    url("assets/bio-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 /* Profile Image */
 .hero-image img {
@@ -96,6 +104,12 @@ body {
   line-height: 1.8;
   font-size: 1.05rem;
 }
+.hero-text {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+}
+
 
 /* Button */
 .btn {
