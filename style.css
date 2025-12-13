@@ -41,6 +41,11 @@ body {
   padding-top: 4rem;
   transition: 0.3s ease;
   box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  z-index: 999;
+}
+
+#sidebar.open {
+  left: 0;
 }
 
 #sidebar a {
@@ -55,7 +60,7 @@ body {
   background-color: var(--bg-hover);
 }
 
-/* Hero Section with Background Image */
+/* ===== Hero Section (Homepage) ===== */
 .hero {
   display: flex;
   align-items: center;
@@ -63,6 +68,7 @@ body {
   padding: 6rem 4rem;
   min-height: 100vh;
 
+  /* Optional background image */
   background:
     linear-gradient(
       rgba(238, 247, 242, 0.88),
@@ -75,7 +81,6 @@ body {
   background-repeat: no-repeat;
 }
 
-
 /* Profile Image */
 .hero-image img {
   width: 280px;
@@ -86,7 +91,13 @@ body {
   border: 8px solid var(--accent-soft);
 }
 
-/* Text */
+/* Hero Text */
+.hero-text {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+}
+
 .hero-text h1 {
   font-size: 3.2rem;
   margin-bottom: 0.6rem;
@@ -104,14 +115,8 @@ body {
   line-height: 1.8;
   font-size: 1.05rem;
 }
-.hero-text {
-  background: rgba(255, 255, 255, 0.55);
-  padding: 2rem 2.5rem;
-  border-radius: 14px;
-}
 
-
-/* Button */
+/* Download CV Button */
 .btn {
   display: inline-block;
   background-color: var(--accent-dark);
@@ -127,7 +132,31 @@ body {
   background-color: #163028;
 }
 
-/* Page content (inner pages) */
+/* ===== Contact Icons (LinkedIn + Email) ===== */
+.contact-icons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.contact-icons a {
+  display: inline-flex;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  fill: var(--accent-dark);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-icons a:hover .icon {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* ===== Inner Pages Layout ===== */
 h1 {
   padding: 2.5rem 3rem 1rem;
 }
@@ -136,8 +165,8 @@ ul {
   padding: 0 3.5rem 3rem;
   line-height: 1.8;
 }
-/* ===== Inner page left spacing ===== */
 
+/* Inner page left spacing */
 body > h1,
 body > h2,
 body > h3,
