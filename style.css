@@ -170,16 +170,6 @@ ul {
   line-height: 1.8;
 }
 
-/* Inner page spacing */
-body > h1,
-body > h2,
-body > h3,
-body > p,
-body > ul {
-  padding-left: 4rem;
-  padding-right: 4rem;
-  max-width: 900px;
-}
 
 /* =====================================================
    INNER PAGE LAYOUT FIX (DESKTOP)
@@ -391,5 +381,18 @@ body > ul {
 .page-content p,
 .page-content ul {
   line-height: 1.8;
+}
+/* ===== Center ALL inner pages ===== */
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;        /* THIS centers the content */
+  padding: 6rem 2rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 4rem 1.5rem;
+  }
 }
 
