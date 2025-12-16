@@ -3,8 +3,8 @@
 :root {
   --bg-main: #eef7f2;
   --bg-secondary: #dbeee4;
-  --bg-sidebar: #cfe7dc;
-  --bg-hover: #b9dccc;
+  --bg-sidebar: rgba(207, 231, 220, 0.75);
+  --bg-hover: rgba(185, 220, 204, 0.6);
   --text-main: #1e2b28;
   --accent-dark: #1f3d33;
   --accent-soft: #94c9b3;
@@ -18,68 +18,65 @@ body {
   color: var(--text-main);
 }
 
+/* ===== Hamburger (RIGHT) ===== */
 .hamburger {
-  font-size: 2rem;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
   position: fixed;
-  top: 0;
-  right: 0;        /* ← move to right */
-  left: auto;     /* ← disable left */
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2.4rem;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
   z-index: 1000;
   color: var(--accent-dark);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
 }
 
-/* ===== Sidebar (RIGHT SIDE) ===== */
+/* ===== Sidebar (RIGHT, TRANSLUCENT) ===== */
 #sidebar {
   position: fixed;
   top: 0;
-  right: -240px;        /* hidden on the right */
-  left: auto;
-  width: 240px;
+  right: -260px;
+  width: 260px;
   height: 100%;
-  background-color: var(--bg-sidebar);
-  padding-top: 4rem;
+  padding-top: 5rem;
+  background: var(--bg-sidebar);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: -4px 0 12px rgba(0,0,0,0.08);
   transition: right 0.3s ease;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.05);
   z-index: 999;
 }
 
-/* Sidebar open state */
 #sidebar.open {
   right: 0;
 }
 
 #sidebar a {
   display: block;
-  padding: 1rem 1.8rem;
+  padding: 1rem 2rem;
   text-decoration: none;
   color: var(--text-main);
   font-weight: bold;
 }
 
 #sidebar a:hover {
-  background-color: var(--bg-hover);
+  background: var(--bg-hover);
 }
 
-/* ===== Hero Section (Homepage) ===== */
+/* ===== Hero Section ===== */
 .hero {
   display: flex;
   align-items: center;
   gap: 3.5rem;
   padding: 6rem 4rem;
   min-height: 100vh;
-
   background:
-    linear-gradient(
-      rgba(238, 247, 242, 0.88),
-      rgba(219, 238, 228, 0.88)
-    ),
+    linear-gradient(rgba(238,247,242,0.88), rgba(219,238,228,0.88)),
     url("assets/bio-bg.jpg");
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
 /* ===== Profile Image ===== */
@@ -88,13 +85,12 @@ body {
   height: 280px;
   border-radius: 50%;
   object-fit: cover;
-  background-color: var(--bg-secondary);
   border: 8px solid var(--accent-soft);
 }
 
 /* ===== Hero Text ===== */
 .hero-text {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255,255,255,0.55);
   padding: 2rem 2.5rem;
   border-radius: 14px;
 }
@@ -106,274 +102,36 @@ body {
 
 .hero-text h2 {
   font-size: 1.2rem;
-  font-weight: normal;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
 }
 
 .hero-text p {
   max-width: 650px;
   line-height: 1.8;
-  font-size: 1.05rem;
 }
 
-/* ===== Contact Icons (FIXED SIZE) ===== */
-.contact-icons {
-  margin-top: 1.2rem;
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-  font-size: 0; /* prevents SVG inheriting large text size */
-}
-
-.contact-icons a {
-  display: inline-flex;
-  font-size: 16px;
-}
-
-.icon {
-  width: 22px;
-  height: 22px;
-  min-width: 22px;
-  min-height: 22px;
-  fill: var(--accent-dark);
-  display: block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.contact-icons a:hover .icon {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
-
-/* ===== Download CV Button ===== */
+/* ===== Buttons ===== */
 .btn {
   display: inline-block;
-  background-color: var(--accent-dark);
-  color: white;
+  margin-top: 1.8rem;
+  background: var(--accent-dark);
+  color: #fff;
   padding: 0.9rem 1.8rem;
   border-radius: 8px;
   text-decoration: none;
-  margin-top: 1.8rem;
-  font-size: 1rem;
 }
 
 .btn:hover {
-  background-color: #163028;
+  background: #163028;
 }
 
-/* ===== Inner Pages ===== */
-h1 {
-  padding: 2.5rem 3rem 1rem;
-}
-
-ul {
-  padding: 0 3.5rem 3rem;
-  line-height: 1.8;
-}
-
-
-/* =====================================================
-   INNER PAGE LAYOUT FIX (DESKTOP)
-   ===================================================== */
-
-.page-content {
-  margin-left: 5rem;          /* space from left edge / hamburger */
-  padding: 2.5rem 3rem;
-  max-width: 900px;
-}
-
-/* Improve readability of long references */
-.page-content ul li {
-  margin-bottom: 1.4rem;
-  line-height: 1.9;
-}
-
-/* Prevent long DOI links from breaking layout */
-.page-content a {
-  word-break: break-word;
-}
-
-/* =====================================================
-   MOBILE RESPONSIVE STYLES
-   ===================================================== */
-
-@media (max-width: 768px) {
-
-  /* Hamburger stays visible */
-  .hamburger {
-    font-size: 1.8rem;
-    padding: 1rem;
-  }
-
-  /* Sidebar covers screen on mobile */
-  #sidebar {
-    width: 100%;
-    left: -100%;
-  }
-
-  #sidebar.open {
-    left: 0;
-  }
-
-  #sidebar a {
-    font-size: 1.1rem;
-    padding: 1.2rem 2rem;
-  }
-
-  /* Hero section stacks vertically */
-  .hero {
-    flex-direction: column;
-    padding: 5rem 1.5rem 3rem;
-    text-align: center;
-  }
-
-  .hero-image img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .hero-text {
-    padding: 1.8rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.3rem;
-  }
-
-  .hero-text h2 {
-    font-size: 1.05rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  /* Contact icons centered */
-  .contact-icons {
-    justify-content: center;
-  }
-
-  /* Inner pages full width on mobile */
-  .page-content {
-    margin-left: 0;
-    padding: 2rem 1.5rem;
-  }
-
-  h1 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  h2, h3, p, ul {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-/* =====================================================
-   VERY SMALL DEVICES (PHONES)
-   ===================================================== */
-
-@media (max-width: 480px) {
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-image img {
-    width: 180px;
-    height: 180px;
-  }
-
-  .btn {
-    padding: 0.8rem 1.4rem;
-    font-size: 0.95rem;
-  }
-}
-/* ================================
-   MOBILE HAMBURGER FIX
-   ================================ */
-
-@media (max-width: 768px) {
-  .hamburger {
-    font-size: 2.4rem;        /* bigger icon */
-    padding: 1.2rem 1.4rem;  /* larger tap area */
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
-    margin: 0.5rem;
-  }
-}
-
-/* Extra safety for very small phones */
-@media (max-width: 480px) {
-  .hamburger {
-    font-size: 2.6rem;
-    padding: 1.3rem 1.5rem;
-  }
-}
-/* ================================
-   HAMBURGER FADE EFFECT
-   ================================ */
-
-.hamburger {
-  transition: opacity 0.3s ease, background 0.3s ease;
-}
-
-/* Faded state */
-.hamburger.fade {
-  opacity: 0.45;
-}
-
-/* Keep visible when sidebar is open */
-#sidebar.open + .hamburger,
-.hamburger.active {
-  opacity: 1;
-}
-
-/* ================================
-   HAMBURGER FADE (FINAL FIX)
-   ================================ */
-
-.hamburger {
-  transition: opacity 0.3s ease, background 0.3s ease;
-}
-
-/* Faded when scrolling */
-.hamburger.is-faded {
-  opacity: 0.4;
-}
-
-/* Fully visible when menu is open */
-.hamburger.is-active {
-  opacity: 1;
-}
-
-/* ===== about Page Background ===== */
-.about-page {
-  min-height: 100vh;
-  padding: 6rem 4rem;
-
-  background:
-    linear-gradient(
-      rgba(238, 247, 242, 0.9),
-      rgba(238, 247, 242, 0.9)
-    ),
-    url("../assets/about-bg.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ===== Global Page Layout (All Pages) ===== */
+/* ===== Center ALL Inner Pages ===== */
 .page-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 6rem 2.5rem;
+  padding: 6rem 2rem;
 }
 
-/* Typography */
 .page-content h1,
 .page-content h2,
 .page-content h3 {
@@ -384,23 +142,65 @@ ul {
 .page-content ul {
   line-height: 1.8;
 }
-/* ===== Center ALL inner pages ===== */
-.page-content {
-  max-width: 800px;
-  margin: 0 auto;        /* THIS centers the content */
-  padding: 6rem 2rem;
+
+.page-content ul li {
+  margin-bottom: 1.2rem;
 }
 
-/* Mobile */
+.page-content a {
+  word-break: break-word;
+}
+
+/* ===== About Page Background ===== */
+.about-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(238,247,242,0.9), rgba(238,247,242,0.9)),
+    url("../assets/about-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===== Mobile Styles ===== */
 @media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
+
   .page-content {
     padding: 4rem 1.5rem;
   }
-}
-@media (max-width: 768px) {
-  .hamburger {
-    font-size: 2.4rem;
-    padding: 1.2rem 1.6rem;
+
+  /* Sidebar full-height but from RIGHT */
+  #sidebar {
+    width: 80%;
+    right: -80%;
+  }
+
+  #sidebar.open {
+    right: 0;
   }
 }
 
+/* ===== Very Small Phones ===== */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hamburger {
+    font-size: 2.6rem;
+  }
+}
