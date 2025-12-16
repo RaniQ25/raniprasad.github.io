@@ -205,29 +205,27 @@ body {
   }
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (FULL WIDTH, LIGHT GREEN) ===== */
 .site-footer {
+  width: 100%;
   margin-top: 4rem;
-  padding: 3rem 1.5rem 2rem;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: var(--bg-secondary); /* light green */
   text-align: center;
-  background: transparent;
 }
 
-/* Box with name + email */
+/* Name + Email line */
 .footer-box {
-  display: inline-block;
-  padding: 1.2rem 2rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  margin-bottom: 1.2rem;
   font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
 }
 
 .footer-box a {
   color: var(--accent-dark);
   text-decoration: none;
+  font-weight: normal;
 }
 
 .footer-box a:hover {
@@ -239,6 +237,7 @@ body {
   font-size: 0.9rem;
   color: #4a5c57;
 }
+
 
 /* Mobile */
 @media (max-width: 480px) {
