@@ -204,3 +204,46 @@ body {
     font-size: 2.6rem;
   }
 }
+
+/* ===== Footer ===== */
+.site-footer {
+  margin-top: 4rem;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+  background: transparent;
+}
+
+/* Box with name + email */
+.footer-box {
+  display: inline-block;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.footer-box a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.footer-box a:hover {
+  text-decoration: underline;
+}
+
+/* Copyright line */
+.footer-copy {
+  font-size: 0.9rem;
+  color: #4a5c57;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer-box {
+    padding: 1rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
