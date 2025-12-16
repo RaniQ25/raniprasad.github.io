@@ -30,22 +30,24 @@ body {
   color: var(--accent-dark);
 }
 
-/* ===== Sidebar ===== */
+/* ===== Sidebar (RIGHT SIDE) ===== */
 #sidebar {
   position: fixed;
   top: 0;
-  left: -240px;
+  right: -240px;        /* hidden on the right */
+  left: auto;
   width: 240px;
   height: 100%;
   background-color: var(--bg-sidebar);
   padding-top: 4rem;
-  transition: 0.3s ease;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.05);
   z-index: 999;
 }
 
+/* Sidebar open state */
 #sidebar.open {
-  left: 0;
+  right: 0;
 }
 
 #sidebar a {
