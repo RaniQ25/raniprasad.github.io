@@ -247,3 +247,35 @@ body {
     font-size: 0.95rem;
   }
 }
+
+/* ===== Contact Icons (FINAL SIZE FIX) ===== */
+.contact-icons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.contact-icons svg,
+.contact-icons img,
+.contact-icons .icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent-dark);
+}
+
+/* Hover (subtle) */
+.contact-icons a:hover svg,
+.contact-icons a:hover img,
+.contact-icons a:hover .icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
