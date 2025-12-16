@@ -205,39 +205,39 @@ body {
   }
 }
 
-/* ===== Footer (Full-width light green band) ===== */
+/* ===== Footer (FULL WIDTH, LIGHT GREEN) ===== */
 .site-footer {
   width: 100%;
-  background: var(--bg-secondary);
-  margin-top: 5rem;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem 2rem;
+  margin-top: 4rem;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: var(--bg-secondary); /* light green */
   text-align: center;
 }
 
-.footer-info {
-  font-size: 1.05rem;
-  margin-bottom: 0.6rem;
+/* Name + Email line */
+.footer-box {
+  font-size: 1rem;
+  font-weight: bold;
   color: var(--text-main);
+  margin-bottom: 0.8rem;
 }
 
-.footer-info a {
+.footer-box a {
   color: var(--accent-dark);
   text-decoration: none;
+  font-weight: normal;
 }
 
-.footer-info a:hover {
+.footer-box a:hover {
   text-decoration: underline;
 }
 
+/* Copyright line */
 .footer-copy {
   font-size: 0.9rem;
   color: #4a5c57;
 }
+
 
 /* Mobile */
 @media (max-width: 480px) {
