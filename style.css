@@ -18,14 +18,14 @@ body {
   color: var(--text-main);
 }
 
-/* ===== Hamburger ===== */
 .hamburger {
   font-size: 2rem;
   padding: 1rem 1.5rem;
   cursor: pointer;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;        /* ← move to right */
+  left: auto;     /* ← disable left */
   z-index: 1000;
   color: var(--accent-dark);
 }
@@ -393,6 +393,12 @@ ul {
 @media (max-width: 768px) {
   .page-content {
     padding: 4rem 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    font-size: 2.4rem;
+    padding: 1.2rem 1.6rem;
   }
 }
 
